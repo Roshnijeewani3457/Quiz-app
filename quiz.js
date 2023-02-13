@@ -42,9 +42,9 @@ let questions = [
     },
    
 ]
-let index=0
-let h=document.getElementById('heading')
-let options=document.querySelectorAll('.r')
+let index=0;
+let h=document.getElementById('heading');
+let options=document.querySelectorAll('.r');
 const loadques=()=>{
     if(index==questions.length)
     {
@@ -62,22 +62,21 @@ const loadques=()=>{
     options[2].nextElementSibling.innerText=q.c;
     options[3].nextElementSibling.innerText=q.d;
 }
-loadques()
-let right=0,wrong=0
+loadques();
+let right=0,wrong=0;
 const check=()=>{
     let options=document.querySelectorAll('.r')
-    let answer
-    let q=questions[index]
+     let q=questions[index];
     options.forEach(
         (input)=>{
              if(input.checked)
              {
                 if(input.value==q.correct)
                 {
-                    right++
+                    right++;
                 }
                 else{
-                    wrong++
+                    wrong++;
                 }
              }
              
@@ -86,11 +85,10 @@ const check=()=>{
 
 }
 const submit=()=>{
-    check()
+    check();
     index++;
-
-   loadques();
-   reset()
+    loadques();
+   reset();
   
 
 }
